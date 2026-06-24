@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir build
           rc /nologo /fo "build\app.res" "res\app.rc"
-          cl /nologo /O2 /W4 /MT /Fe:"build\Factorio-Custom.exe" "src\main.c" "build\app.res" /link /SUBSYSTEM:WINDOWS
+          cl /nologo /O2 /W4 /MT /Fe:"build\Factorio-Custom.exe" "src\main.c" "build\app.res" /link /SUBSYSTEM:WINDOWS user32.lib shell32.lib
 
       - name: Rename artifact with version
         run: Move-Item "build\Factorio-Custom.exe" "build\Factorio-Custom-${{ github.ref_name }}.exe"
