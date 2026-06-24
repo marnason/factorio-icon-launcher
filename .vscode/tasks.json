@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Factorio Launcher",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/d",
+        "/c",
+        "if not exist build mkdir build && \"C:\\Program Files\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat\" && rc /nologo /fo \"build\\app.res\" \"res\\app.rc\" && cl /nologo /O2 /W4 /MT /Fe:\"build\\factorio-icon-launcher.exe\" \"src\\main.c\" \"build\\app.res\" /link /SUBSYSTEM:WINDOWS"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up MSVC (x64)
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
+      - name: Build
+        run: |
+          mkdir build
+          rc /nologo /fo "build\app.res" "res\app.rc"
+          cl /nologo /O2 /W4 /MT /Fe:"build\Factorio-Custom.exe" "src\main.c" "build\app.res" /link /SUBSYSTEM:WINDOWS
+
+      - name: Rename artifact with version
+        run: Move-Item "build\Factorio-Custom.exe" "build\Factorio-Custom-${{ github.ref_name }}.exe"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/Factorio-Custom-${{ github.ref_name }}.exe
