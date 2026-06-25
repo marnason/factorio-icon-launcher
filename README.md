@@ -1,6 +1,6 @@
 # factorio-icon-launcher
 
-A tiny Windows executable whose only real purpose is to provide a high-resolution icon for desktop shortcuts, Start menu entries, pinned taskbar shortcuts, or similar launcher shortcuts.
+A tiny Factorio launcher with a high-resolution shortcut icon.
 
 [Download the latest release](https://github.com/marnason/factorio-icon-launcher/releases/latest/download/factorio-icon-launcher.exe)
 
