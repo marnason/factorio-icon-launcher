@@ -1,12 +1,21 @@
-# Factorio Custom Launcher
+# factorio-icon-launcher
 
-A tiny Windows executable that launches `factorio.exe` from the same folder, using a custom icon. Drop it next to `factorio.exe` and use it as your shortcut target.
+A tiny Windows executable whose only real purpose is to provide a high-resolution icon for desktop shortcuts, Start menu entries, pinned taskbar shortcuts, or similar launcher shortcuts.
+
+It simply launches `factorio.exe` from the same folder. Drop it next to `factorio.exe`, then point your shortcut at this launcher instead of the original executable.
+
+<p align="center">
+  <img src="res/factorio-wheel.ico" width="256" alt="Factorio custom launcher icon">
+</p>
+
+Inspired by this Factorio forum post:
+https://forums.factorio.com/viewtopic.php?p=695765
 
 ## Building
 
 Requires Visual Studio 2022 Build Tools. Open the workspace in VS Code and run the default build task (`Ctrl+Shift+B`), or run it from the command line:
 
-```
+```cmd
 cmd /c "if not exist build mkdir build && "C:\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && rc /nologo /fo "build\app.res" "res\app.rc" && cl /nologo /O2 /W4 /MT /Fe:"build\Factorio-Custom.exe" "src\main.c" "build\app.res" /link /SUBSYSTEM:WINDOWS"
 ```
 
