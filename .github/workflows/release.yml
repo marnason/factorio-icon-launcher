@@ -20,6 +20,9 @@ jobs:
         with:
           arch: x64
 
+      - name: Download icon
+        run: curl -L -o res/factorio.ico https://github.com/marnason/factorio-icon/releases/latest/download/factorio.ico
+
       - name: Build
         run: |
           mkdir build
