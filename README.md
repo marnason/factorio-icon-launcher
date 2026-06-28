@@ -4,7 +4,7 @@ A tiny Factorio launcher with a high-resolution shortcut icon.
 
 [Download the latest release](https://github.com/marnason/factorio-icon-launcher/releases/latest/download/factorio-icon-launcher.exe)
 
-It simply launches `factorio.exe` from the same folder. Drop it next to `factorio.exe`, then point your shortcut at this launcher instead of the original executable.
+It simply launches `factorio.exe` from the same folder. Drop it next to `res/factorio.exe`, then point your shortcut at this launcher instead of the original executable.
 
 <p align="center">
   <img src="factorio.ico" width="256" alt="Factorio custom launcher icon">
